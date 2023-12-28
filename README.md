@@ -25,8 +25,9 @@ This sample code demonstrates using Metabase static embedding in Ruby using Sina
 ## Embed the dashboard
 1. Go to your dashboard, click on the share/embed button at the top
 2. Click on the "Publish" button
-3. Start the server: `$ ruby app.rb`
-4. Open the app in your browser at http://localhost:4567
+3. Install the dependencies: `$ bundle install`
+4. Start the server: `$ ruby app.rb`
+5. Open the app in your browser at http://localhost:4567
 
 ## Reporting issues
 
