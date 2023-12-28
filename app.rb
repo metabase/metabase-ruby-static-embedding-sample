@@ -3,7 +3,7 @@ require 'jwt'
 
 METABASE_EMBEDDING_SECRET = ENV.fetch('METABASE_EMBEDDING_SECRET')
 METABASE_SITE_URL = ENV.fetch('METABASE_SITE_URL') || 'http://localhost:3000'
-METABASE_EMBED_DASHBOARD_ID= ENV.fetch('METABASE_EMBED_DASHBOARD_ID')
+METABASE_EMBED_DASHBOARD_ID= ENV.fetch('METABASE_EMBED_DASHBOARD_ID').to_i
 
 get '/' do
   payload = {
@@ -12,7 +12,10 @@ get '/' do
     exp: Time.now.to_i + (60 * 10) # 10 minute expiration
   }
   token = JWT.encode payload, METABASE_EMBEDDING_SECRET
-  iframe_url = METABASE_SITE_URL + "/embed/dashboard/" + token + "#bordered=true&titled=true"
+  iframe_url = URI.join(METABASE_SITE_URL,
+                        "/embed/dashboard/",
+                         token,
+                        "#bordered=true&titled=true")
 
   <<~TEXT
   <iframe
