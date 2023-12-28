@@ -7,10 +7,9 @@ METABASE_EMBED_DASHBOARD_ID= ENV.fetch('METABASE_EMBED_DASHBOARD_ID')
 
 get '/' do
   payload = {
-    :resource => {:dashboard => 8},
-    :params => {          
-    },
-    :exp => Time.now.to_i + (60 * 10) # 10 minute expiration
+    resource: {dashboard: METABASE_EMBED_DASHBOARD_ID},
+    params: {},
+    exp: Time.now.to_i + (60 * 10) # 10 minute expiration
   }
   token = JWT.encode payload, METABASE_EMBEDDING_SECRET
   iframe_url = METABASE_SITE_URL + "/embed/dashboard/" + token + "#bordered=true&titled=true"
