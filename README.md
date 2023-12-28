@@ -31,7 +31,7 @@ This sample code demonstrates using Metabase static embedding in Ruby using Sina
 
 ## Reporting issues
 
-Please report bugs or feature requests as issues in this reporsitory. Please do not report security vulnerabilities on the public GitHub issue tracker. Our Security Policy describes [the procedure](https://github.com/metabase/metabase/security#reporting-a-vulnerability) for disclosing security issues.
+Please report bugs or feature requests as issues in this repository. Please do not report security vulnerabilities on the public GitHub issue tracker. Our Security Policy describes [the procedure](https://github.com/metabase/metabase/security#reporting-a-vulnerability) for disclosing security issues.
 
 ## Author
 
